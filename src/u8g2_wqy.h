@@ -11,6 +11,10 @@
 extern "C" {
 #endif
 
+#ifndef U8G2_USE_LARGE_FONTS
+#define U8G2_USE_LARGE_FONTS
+#endif
+
 #ifndef U8X8_FONT_SECTION
 
 #ifdef __GNUC__
