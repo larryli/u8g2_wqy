@@ -12,20 +12,18 @@
 
 ## Arduino 使用
 
-请将 C 文件复制到 `Arduino/libraries/U8g2/src/clib` 目录。
+请将 `*.h` 文件和 `*.c` 文件复制到 `Arduino/libraries/U8g2/src/clib` 目录。
 
-要使用对应的字符在 ino 文件中声明：
+然后修改 `Arduino/libraries/U8g2/src/U8g2lib.h` 文件，在
 
+```c
+#include "clib/u8g2.h"
 ```
-extern const uint8_t u8g2_font_gb2312_12_t[] U8G2_FONT_SECTION("u8g2_font_gb2312_12_t");
-extern const uint8_t u8g2_font_gb2312a_12_t[] U8G2_FONT_SECTION("u8g2_font_gb2312a_12_t");
-extern const uint8_t u8g2_font_gb2312b_12_t[] U8G2_FONT_SECTION("u8g2_font_gb2312b_12_t");
-extern const uint8_t u8g2_font_gb2312_14_t[] U8G2_FONT_SECTION("u8g2_font_gb2312_14_t");
-extern const uint8_t u8g2_font_gb2312a_14_t[] U8G2_FONT_SECTION("u8g2_font_gb2312a_14_t");
-extern const uint8_t u8g2_font_gb2312b_14_t[] U8G2_FONT_SECTION("u8g2_font_gb2312b_14_t");
-extern const uint8_t u8g2_font_gb2312_16_t[] U8G2_FONT_SECTION("u8g2_font_gb2312_16_t");
-extern const uint8_t u8g2_font_gb2312a_16_t[] U8G2_FONT_SECTION("u8g2_font_gb2312a_16_t");
-extern const uint8_t u8g2_font_gb2312b_16_t[] U8G2_FONT_SECTION("u8g2_font_gb2312b_16_t");
+
+后增加一行：
+
+```c
+#include "clib/u8g2_gb2312.h"
 ```
 
 即可使用。
